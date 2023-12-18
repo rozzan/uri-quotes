@@ -6,11 +6,17 @@ by https://old.reddit.com/r/2007scape/comments/18ksax8/had_a_delusional_idea_whe
 
 1. Install Uri Quotes from the RuneLite plugin hub.
 
-2. Open the Configure menu. ![Image](images/howtouse-2.png)
+2. Open the Configure menu.
 
-3. Chose your mode, and fill out the appropriate fields. ![Image](images/howtouse-3.png)
+![Image](images/howtouse-2.png)
 
-4. Meet up with Uri! ![Image](images/howtouse-4.png)
+3. Chose your mode, and fill out the appropriate fields.
+
+![Image](images/howtouse-3.png)
+
+4. Meet up with Uri!
+
+![Image](images/howtouse-4.png)
 
 ## Modes
 
