@@ -1,13 +1,13 @@
-package com.example;
+package me.rozza.uriquotes;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class ExamplePluginTest
+public class UriQuotesPluginTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(ExamplePlugin.class);
+		ExternalPluginManager.loadBuiltin(UriQuotesPlugin.class);
 		RuneLite.main(args);
 	}
 }
