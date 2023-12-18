@@ -10,7 +10,7 @@ by https://old.reddit.com/r/2007scape/comments/18ksax8/had_a_delusional_idea_whe
 
 ![Image](images/howtouse-2.png)
 
-3. Chose your mode, and fill out the appropriate fields.
+3. Choose your mode, and fill out the appropriate fields.
 
 ![Image](images/howtouse-3.png)
 
