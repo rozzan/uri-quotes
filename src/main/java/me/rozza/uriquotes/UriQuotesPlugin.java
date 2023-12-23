@@ -7,8 +7,8 @@ import me.rozza.uriquotes.retrievers.QuoteRetriever;
 import net.runelite.api.Client;
 import net.runelite.api.events.*;
 import net.runelite.api.widgets.ComponentID;
+import net.runelite.api.widgets.InterfaceID;
 import net.runelite.api.widgets.Widget;
-import net.runelite.api.widgets.WidgetID;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.events.ConfigChanged;
@@ -18,6 +18,7 @@ import net.runelite.client.plugins.PluginDescriptor;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
+import org.apache.commons.lang3.StringUtils;
 
 @Slf4j
 @PluginDescriptor(
@@ -68,7 +69,7 @@ public class UriQuotesPlugin extends Plugin {
 
 	@Subscribe
 	public void onWidgetLoaded(WidgetLoaded event) throws Exception {
-		if (event.getGroupId() == WidgetID.DIALOG_NPC_GROUP_ID) {
+		if (event.getGroupId() == InterfaceID.DIALOG_NPC) {
 			this.queueUriQuote = true;
 		}
 	}
@@ -104,6 +105,20 @@ public class UriQuotesPlugin extends Plugin {
 		loadQuotes();
 		String quote = this.quotes.get(this.rng.nextInt(this.quotes.size()));
 		widget.setText(quote);
+		widget.setLineHeight(this.getLineHeight(quote));
+	}
+
+	private int getLineHeight(final String text)
+	{
+		final int count = StringUtils.countMatches(text, "<br>");
+
+		if (count == 1) {
+			return 28;
+		} else if (count == 2) {
+			return 20;
+		}
+
+		return 16;
 	}
 
 	@Provides
