@@ -18,6 +18,7 @@ import net.runelite.client.plugins.PluginDescriptor;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
+import org.apache.commons.lang3.StringUtils;
 
 @Slf4j
 @PluginDescriptor(
@@ -104,6 +105,20 @@ public class UriQuotesPlugin extends Plugin {
 		loadQuotes();
 		String quote = this.quotes.get(this.rng.nextInt(this.quotes.size()));
 		widget.setText(quote);
+		widget.setLineHeight(this.getLineHeight(quote));
+	}
+
+	private int getLineHeight(final String text)
+	{
+		final int count = StringUtils.countMatches(text, "<br>");
+
+		if (count == 1) {
+			return 28;
+		} else if (count == 2) {
+			return 20;
+		}
+
+		return 16;
 	}
 
 	@Provides
