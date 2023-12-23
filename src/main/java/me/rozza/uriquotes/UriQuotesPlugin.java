@@ -7,8 +7,8 @@ import me.rozza.uriquotes.retrievers.QuoteRetriever;
 import net.runelite.api.Client;
 import net.runelite.api.events.*;
 import net.runelite.api.widgets.ComponentID;
+import net.runelite.api.widgets.InterfaceID;
 import net.runelite.api.widgets.Widget;
-import net.runelite.api.widgets.WidgetID;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.events.ConfigChanged;
@@ -68,7 +68,7 @@ public class UriQuotesPlugin extends Plugin {
 
 	@Subscribe
 	public void onWidgetLoaded(WidgetLoaded event) throws Exception {
-		if (event.getGroupId() == WidgetID.DIALOG_NPC_GROUP_ID) {
+		if (event.getGroupId() == InterfaceID.DIALOG_NPC) {
 			this.queueUriQuote = true;
 		}
 	}
